@@ -19,7 +19,7 @@ def list_to_do():
     idea_list= read_file()
     index= 1
     for line in idea_list:
-        print(f" {index},{line[:-1]}")
+        print(f" {index}: {line[:-1]}")
         index +=1
 
 def is_int(input):
@@ -33,7 +33,7 @@ def rewrite_idea_file():
 
 if len(sys.argv) == 3 and sys.argv[1] == "--delete" and is_int(sys.argv[2]):
     to_dos = list(read_file())
-    idea_to_delete = int(sys.argv[2])
+    idea_to_delete = int(sys.argv[2])-1
     del to_dos[idea_to_delete]
     rewrite_idea_file()
 else:
